@@ -1,5 +1,5 @@
 {
-  "name": "@vinkas/tailwind-plugin",
+  "name": "@vinkas/tailwindcss",
   "version": "0.0.1",
   "description": "Tailwind CSS plugin for Vinkas",
   "main": "src/index.js",
@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vinkashq/tailwind-plugin.git"
+    "url": "git+https://github.com/vinkashq/tailwindcss.git"
   },
   "author": {
     "name": "Vinoth Kannan",
@@ -25,9 +25,9 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/vinkashq/tailwind-plugin/issues"
+    "url": "https://github.com/vinkashq/tailwindcss/issues"
   },
-  "homepage": "https://github.com/vinkashq/tailwind-plugin#readme",
+  "homepage": "https://github.com/vinkashq/tailwindcss#readme",
   "devDependencies": {
     "jest": "^29.7.0",
     "postcss": "^8.4.47",
