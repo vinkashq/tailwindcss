@@ -1,6 +1,7 @@
 module.exports = {
   primary: {
     DEFAULT: '#ed2939',  // alizarin-crimson
+    'contrast': '#fff1f2',
     50: '#fff1f2',
     100: '#ffe0e3',
     200: '#ffc6cb',
@@ -15,6 +16,7 @@ module.exports = {
   },
   secondary: {
     DEFAULT: '#29eddd',  // bright-turquoise
+    'contrast': '#003435',
     50: '#eefffc',
     100: '#c5fff8',
     200: '#8cfff1',

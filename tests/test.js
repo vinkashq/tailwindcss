@@ -8,6 +8,9 @@ const config = {
     },
   ],
   theme: {
+    colors: {
+      ...require("../src/colors/vinkas"),
+    },
   },
   plugins: [plugin],
 };
@@ -98,4 +101,44 @@ it ('vinkas colors', () => {
 
 it ('singfuse colors', () => {
   expect(plugin.singfuseColors).toBe(require("../src/colors/singfuse"))
+})
+
+let buttonsExpected = `
+.btn {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 0.25rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1rem;
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+    transition-duration: 150ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1)
+}
+.btn-primary {
+    --tw-bg-opacity: 1;
+    background-color: rgb(14 97 234 / var(--tw-bg-opacity));
+    --tw-text-opacity: 1;
+    color: rgb(238 248 255 / var(--tw-text-opacity))
+}
+.btn-secondary {
+    --tw-bg-opacity: 1;
+    background-color: rgb(234 151 14 / var(--tw-bg-opacity));
+    --tw-text-opacity: 1;
+    color: rgb(68 26 4 / var(--tw-text-opacity))
+}
+`
+
+it ('buttons', () => {
+  config.content[0].raw = "btn btn-primary btn-secondary"
+  let utilitiesCSS = postcss([require("tailwindcss")(config)]).process(
+    "@tailwind utilities",
+    { from: undefined }
+  ).then(({ css }) => {
+    expect(css).toBe(buttonsExpected.trim())
+  })
 })

@@ -1,6 +1,4 @@
 const plugin = require('tailwindcss/plugin')
-const vinkasColors = require('./colors/vinkas')
-const singfuseColors = require('./colors/singfuse')
 
 module.exports = plugin(
   function ({ addUtilities, matchUtilities, theme }) {
@@ -8,6 +6,7 @@ module.exports = plugin(
       '.container': {
         '@apply mx-auto': {},
       },
+      ...require('./components/buttons')
     })
     matchUtilities(
       {
@@ -39,5 +38,5 @@ module.exports = plugin(
   }
 )
 
-module.exports.vinkasColors = vinkasColors;
-module.exports.singfuseColors = singfuseColors;
+module.exports.vinkasColors = require('./colors/vinkas');
+module.exports.singfuseColors = require('./colors/singfuse');
