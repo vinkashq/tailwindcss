@@ -1,4 +1,6 @@
 const plugin = require('tailwindcss/plugin')
+const vinkasColors = require('./colors/vinkas')
+const singfuseColors = require('./colors/singfuse')
 
 module.exports = plugin(
   function ({ addUtilities, matchUtilities, theme }) {
@@ -36,3 +38,6 @@ module.exports = plugin(
     )
   }
 )
+
+module.exports.vinkasColors = vinkasColors;
+module.exports.singfuseColors = singfuseColors;

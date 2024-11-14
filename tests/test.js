@@ -91,3 +91,11 @@ it('row', () => {
     expect(css).toBe(rowExpected.trim())
   })
 })
+
+it ('vinkas colors', () => {
+  expect(plugin.vinkasColors).toBe(require("../src/colors/vinkas"))
+})
+
+it ('singfuse colors', () => {
+  expect(plugin.singfuseColors).toBe(require("../src/colors/singfuse"))
+})
