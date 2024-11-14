@@ -1,6 +1,6 @@
 module.exports = {
   primary: {
-    DEFAULT: '#0e61ea',
+    DEFAULT: '#0e61ea',  // blue-ribbon
     50: '#eef8ff',
     100: '#d8eeff',
     200: '#bae2ff',
@@ -14,7 +14,7 @@ module.exports = {
     950: '#122a59',
   },
   secondary: {
-    DEFAULT: '#ea970e',
+    DEFAULT: '#ea970e',  // fire-bush
     100: '#fdf2c8',
     200: '#fbe48c',
     300: '#f9d050',
