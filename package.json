@@ -1,6 +1,6 @@
 {
   "name": "@vinkas/tailwindcss",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Tailwind CSS plugin for Vinkas",
   "main": "src/index.js",
   "publishConfig": {
