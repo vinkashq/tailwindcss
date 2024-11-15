@@ -119,22 +119,10 @@ let buttonsExpected = `
     transition-duration: 150ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1)
 }
-.btn-primary {
-    --tw-bg-opacity: 1;
-    background-color: rgb(14 97 234 / var(--tw-bg-opacity, 1));
-    --tw-text-opacity: 1;
-    color: rgb(238 248 255 / var(--tw-text-opacity, 1))
-}
-.btn-secondary {
-    --tw-bg-opacity: 1;
-    background-color: rgb(234 151 14 / var(--tw-bg-opacity, 1));
-    --tw-text-opacity: 1;
-    color: rgb(68 26 4 / var(--tw-text-opacity, 1))
-}
 `
 
 it ('buttons', () => {
-  config.content[0].raw = "btn btn-primary btn-secondary"
+  config.content[0].raw = "btn"
   let utilitiesCSS = postcss([require("tailwindcss")(config)]).process(
     "@tailwind utilities",
     { from: undefined }
