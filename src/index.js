@@ -1,4 +1,5 @@
 const plugin = require('tailwindcss/plugin')
+const colorUtilities = require('./utilities/colors')
 
 module.exports = plugin(
   function ({ addUtilities, matchUtilities, theme }) {
@@ -6,7 +7,8 @@ module.exports = plugin(
       '.container': {
         '@apply mx-auto': {},
       },
-      ...require('./components/buttons')
+      ...require('./utilities/buttons'),
+      ...colorUtilities(theme('colors')),
     })
     matchUtilities(
       {

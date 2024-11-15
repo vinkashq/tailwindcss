@@ -121,15 +121,15 @@ let buttonsExpected = `
 }
 .btn-primary {
     --tw-bg-opacity: 1;
-    background-color: rgb(14 97 234 / var(--tw-bg-opacity));
+    background-color: rgb(14 97 234 / var(--tw-bg-opacity, 1));
     --tw-text-opacity: 1;
-    color: rgb(238 248 255 / var(--tw-text-opacity))
+    color: rgb(238 248 255 / var(--tw-text-opacity, 1))
 }
 .btn-secondary {
     --tw-bg-opacity: 1;
-    background-color: rgb(234 151 14 / var(--tw-bg-opacity));
+    background-color: rgb(234 151 14 / var(--tw-bg-opacity, 1));
     --tw-text-opacity: 1;
-    color: rgb(68 26 4 / var(--tw-text-opacity))
+    color: rgb(68 26 4 / var(--tw-text-opacity, 1))
 }
 `
 
@@ -140,5 +140,43 @@ it ('buttons', () => {
     { from: undefined }
   ).then(({ css }) => {
     expect(css).toBe(buttonsExpected.trim())
+  })
+})
+
+let colorsExpected = `
+.color-primary {
+    --tw-bg-opacity: 1;
+    background-color: rgb(14 97 234 / var(--tw-bg-opacity, 1));
+    --tw-text-opacity: 1;
+    color: rgb(238 248 255 / var(--tw-text-opacity, 1))
+}
+`
+
+it ('colors', () => {
+  config.content[0].raw = "color-primary"
+  let utilitiesCSS = postcss([require("tailwindcss")(config)]).process(
+    "@tailwind utilities",
+    { from: undefined }
+  ).then(({ css }) => {
+    expect(css).toBe(colorsExpected.trim())
+  })
+})
+
+let colorsWithShadeExpected = `
+.color-secondary-300 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(249 208 80 / var(--tw-bg-opacity, 1));
+    --tw-text-opacity: 1;
+    color: rgb(177 82 12 / var(--tw-text-opacity, 1))
+}
+`
+
+it ('colors with shade', () => {
+  config.content[0].raw = "color-secondary-300"
+  let utilitiesCSS = postcss([require("tailwindcss")(config)]).process(
+    "@tailwind utilities",
+    { from: undefined }
+  ).then(({ css }) => {
+    expect(css).toBe(colorsWithShadeExpected.trim())
   })
 })
