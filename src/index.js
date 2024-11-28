@@ -4,9 +4,6 @@ const colorUtilities = require('./utilities/colors')
 module.exports = plugin(
   function ({ addUtilities, matchUtilities, theme }) {
     addUtilities({
-      '.container': {
-        '@apply mx-auto': {},
-      },
       ...require('./utilities/buttons'),
       ...colorUtilities(theme('colors')),
     })
@@ -42,3 +39,4 @@ module.exports = plugin(
 
 module.exports.vinkasColors = require('./colors/vinkas');
 module.exports.singfuseColors = require('./colors/singfuse');
+module.exports.containerConfig = require('./config/container');
