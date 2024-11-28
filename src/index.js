@@ -39,3 +39,4 @@ module.exports = plugin(
 
 module.exports.vinkasColors = require('./colors/vinkas');
 module.exports.singfuseColors = require('./colors/singfuse');
+module.exports.containerConfig = require('./config/container');
