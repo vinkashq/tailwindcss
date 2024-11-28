@@ -1,9 +1,11 @@
 const plugin = require('tailwindcss/plugin')
+const colorUtilities = require('./utilities/colors')
 
 module.exports = plugin(
   function ({ addUtilities, matchUtilities, theme }) {
     addUtilities({
-      ...require('./components/buttons')
+      ...require('./utilities/buttons'),
+      ...colorUtilities(theme('colors')),
     })
     matchUtilities(
       {
