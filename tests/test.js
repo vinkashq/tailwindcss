@@ -15,23 +15,6 @@ const config = {
   plugins: [plugin],
 };
 
-let containerExpected = `
-.container {
-    margin-left: auto;
-    margin-right: auto
-}
-`
-
-it('container', () => {
-  config.content[0].raw = "container"
-  let utilitiesCSS = postcss([require("tailwindcss")(config)]).process(
-    "@tailwind utilities",
-    { from: undefined }
-  ).then(({ css }) => {
-    expect(css).toBe(containerExpected.trim())
-  })
-})
-
 let rowExpected = `
 .row-0 {
     padding-top: 0px;

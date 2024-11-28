@@ -3,9 +3,6 @@ const plugin = require('tailwindcss/plugin')
 module.exports = plugin(
   function ({ addUtilities, matchUtilities, theme }) {
     addUtilities({
-      '.container': {
-        '@apply mx-auto': {},
-      },
       ...require('./components/buttons')
     })
     matchUtilities(
