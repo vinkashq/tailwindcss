@@ -11,8 +11,8 @@ export default tailwindPlugin(
     matchUtilities(
       {
         row: (size) => {
-          const spacing = theme('spacing');
-          const value = Object.keys(spacing).find(key => spacing[key] === size);
+          const spacing = theme('spacing') as Record<string, string>;
+          const value = Object.keys(spacing).find(key => spacing[key] === size) as string;
           const intValue = parseInt(value);
 
           let smValue;
