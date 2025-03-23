@@ -1,8 +1,9 @@
 {
   "name": "@vinkas/tailwindcss",
-  "version": "0.0.6",
+  "version": "0.1.0",
   "description": "Tailwind CSS plugin for Vinkas",
-  "main": "src/index.js",
+  "type": "module",
+  "main": "src/index.ts",
   "publishConfig": {
     "access": "public"
   },
@@ -30,6 +31,10 @@
   },
   "homepage": "https://github.com/vinkashq/tailwindcss#readme",
   "devDependencies": {
+    "@babel/core": "^7.26.10",
+    "@babel/preset-env": "^7.26.9",
+    "@babel/preset-typescript": "^7.26.0",
+    "babel-jest": "^29.7.0",
     "jest": "^29.7.0",
     "postcss": "^8.4.47",
     "tailwindcss": "^3.4.14"

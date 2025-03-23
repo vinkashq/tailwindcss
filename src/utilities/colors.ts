@@ -1,4 +1,4 @@
-module.exports = function (colors) {
+export default function (colors) {
   const utilities = {};
   Object.keys(colors).forEach((colorName) => {
     const color = colors[colorName];

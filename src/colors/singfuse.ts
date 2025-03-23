@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   primary: {
     DEFAULT: '#ed2939',  // alizarin-crimson
     'contrast': '#fff1f2',

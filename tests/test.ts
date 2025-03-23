@@ -1,5 +1,7 @@
-const postcss = require('postcss')
-const plugin = require("../src/index");
+import postcss from 'postcss';
+import * as vinkascss from '../src/index';
+import colors from '../src/colors/default';
+import singfuseColors from '../src/colors/singfuse';
 
 const config = {
   content: [
@@ -9,10 +11,10 @@ const config = {
   ],
   theme: {
     colors: {
-      ...require("../src/colors/vinkas"),
+      ...colors,
     },
   },
-  plugins: [plugin],
+  plugins: [vinkascss.plugin],
 };
 
 let rowExpected = `
@@ -79,11 +81,11 @@ it('row', () => {
 })
 
 it ('vinkas colors', () => {
-  expect(plugin.vinkasColors).toBe(require("../src/colors/vinkas"))
+  expect(vinkascss.colors).toBe(colors)
 })
 
 it ('singfuse colors', () => {
-  expect(plugin.singfuseColors).toBe(require("../src/colors/singfuse"))
+  expect(vinkascss.singfuseColors).toBe(singfuseColors)
 })
 
 let buttonsExpected = `

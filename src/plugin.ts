@@ -1,10 +1,11 @@
-const plugin = require('tailwindcss/plugin')
-const colorUtilities = require('./utilities/colors')
+import tailwindPlugin from 'tailwindcss/plugin';
+import colorUtilities from './utilities/colors';
+import buttons from './utilities/buttons';
 
-module.exports = plugin(
+export default tailwindPlugin(
   function ({ addUtilities, matchUtilities, theme }) {
     addUtilities({
-      ...require('./utilities/buttons'),
+      ...buttons,
       ...colorUtilities(theme('colors')),
     })
     matchUtilities(
@@ -36,7 +37,3 @@ module.exports = plugin(
     )
   }
 )
-
-module.exports.vinkasColors = require('./colors/vinkas');
-module.exports.singfuseColors = require('./colors/singfuse');
-module.exports.containerConfig = require('./config/container');

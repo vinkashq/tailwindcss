@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   primary: {
     DEFAULT: '#0e61ea',  // blue-ribbon
     'contrast': '#eef8ff',

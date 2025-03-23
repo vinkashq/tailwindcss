@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   center: true,
   padding: {
     DEFAULT: '1rem',
