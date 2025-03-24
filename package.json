@@ -1,6 +1,6 @@
 {
   "name": "@vinkas/tailwindcss",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Tailwind CSS plugin for Vinkas",
   "type": "module",
   "main": "lib/index.js",
