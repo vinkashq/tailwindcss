@@ -1,5 +1,9 @@
-export default function (colors) {
-  const utilities = {};
+interface Colors {
+  [colorName: string]: string | { [shadeName: string]: string };
+}
+
+export default function (colors: Colors) {
+  const utilities: { [key: string]: { [key: string]: any } } = {};
   Object.keys(colors).forEach((colorName) => {
     const color = colors[colorName];
 
@@ -9,7 +13,7 @@ export default function (colors) {
 
       const apply = `@apply ${bg} ${text}`;
 
-      const rule = {};
+      const rule: { [key: string]: any } = {};
       rule[apply] = {};
 
       utilities[`.color-${colorName}`] = rule;
@@ -39,7 +43,7 @@ export default function (colors) {
           className += `-${shadeName}`;
         }
 
-        const rule = {};
+        const rule: { [key: string]: any } = {};
         rule[apply] = {};
 
         utilities[className] = rule;
