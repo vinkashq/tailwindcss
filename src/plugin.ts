@@ -1,6 +1,6 @@
-import tailwindPlugin from 'tailwindcss/plugin';
-import colorUtilities from './utilities/colors';
-import buttons from './utilities/buttons';
+import tailwindPlugin from 'tailwindcss/plugin.js';
+import colorUtilities from './utilities/colors.js';
+import buttons from './utilities/buttons.js';
 
 export default tailwindPlugin(
   function ({ addUtilities, matchUtilities, theme }) {
