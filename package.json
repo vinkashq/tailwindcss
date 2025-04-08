@@ -1,11 +1,10 @@
 {
   "name": "@vinkas/tailwindcss",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Tailwind CSS plugin for Vinkas",
   "type": "module",
   "main": "lib/index.js",
-  "module": "src/index.ts",
-  "types": "src/index.d.ts",
+  "types": "lib/index.d.ts",
   "publishConfig": {
     "access": "public"
   },
