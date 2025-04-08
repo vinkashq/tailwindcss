@@ -1,7 +1,7 @@
 import postcss from 'postcss';
-import * as vinkascss from '../src/index';
-import colors from '../src/colors/default';
-import singfuseColors from '../src/colors/singfuse';
+import * as vinkascss from '../lib/index';
+import colors from '../lib/colors/default';
+import singfuseColors from '../lib/colors/singfuse';
 
 const config = {
   content: [
