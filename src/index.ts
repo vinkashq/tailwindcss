@@ -1,11 +1,9 @@
-import colors from './colors/default.js';
-import singfuseColors from './colors/singfuse.js';
-import containerConfig from './config/container.js';
-import plugin from './plugin.js';
+// This package is now CSS-based.
+// Utilities are provided in 'vinkas-plugin.css'.
+// Please refer to the documentation for how to integrate and theme the utilities.
 
-export {
-  plugin,
-  colors,
-  singfuseColors,
-  containerConfig,
-}
+// Color palettes (previously exported as JS objects) are now provided
+// as CSS custom property examples in the documentation (e.g., README.md or THEMING.md)
+// for users to include in their @theme block.
+
+export {}; // Ensures this file is treated as a module.
