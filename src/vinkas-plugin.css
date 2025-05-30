@@ -1,0 +1,309 @@
+/* Tailwind CSS v4 Plugin for Vinkas Utilities */
+
+/*
+  This file replaces the JavaScript-based plugin (src/plugin.ts)
+  for compatibility with Tailwind CSS v4.
+
+  It uses @theme, @utility, and other CSS-based Tailwind directives.
+*/
+
+/* Theme Definition (Placeholder) */
+/*
+  Users of this plugin will need to define their actual color, spacing,
+  and other theme values using @theme in their main CSS file.
+  For the purpose of this plugin, we'll assume standard Tailwind CSS
+  variable names (e.g., --color-primary, --color-primary-50,
+  --color-primary-contrast, --spacing-0, --spacing-px, --spacing-0-5,
+  --spacing-1, --rounded-md, --font-size-sm, --leading-4,
+  --font-weight-medium, --breakpoint-sm, etc.) are available.
+
+  For Container Paddings (if using the .container utility from this plugin):
+  @theme {
+    --container-padding-default: 1rem;
+    --container-padding-sm: 2rem;
+    --container-padding-md: 3rem;
+    --container-padding-lg: 4rem;
+    --container-padding-xl: 5rem;
+    --container-padding-2xl: 6rem;
+
+    /* Define breakpoints if not using Tailwind defaults, e.g.: */
+    /* --breakpoint-sm: 640px; */
+    /* --breakpoint-md: 768px; */
+    /* ...etc. */
+  }
+
+  CSS variable names for fractional spacing like '0.5' are assumed as '--spacing-0-5'.
+*/
+
+@utility .btn {
+  display: inline-flex;
+  align-items: center;
+  /* Assuming --rounded-md would be defined by the user, e.g. 0.375rem */
+  border-radius: var(--rounded-md, 0.375rem);
+  /* Assuming --spacing-2 (0.5rem) and --spacing-4 (1rem) are available */
+  padding-top: var(--spacing-2, 0.5rem);
+  padding-bottom: var(--spacing-2, 0.5rem);
+  padding-left: var(--spacing-4, 1rem);
+  padding-right: var(--spacing-4, 1rem);
+  /* Assuming --font-size-sm (0.875rem) and --leading-4 (1rem) are available */
+  font-size: var(--font-size-sm, 0.875rem);
+  line-height: var(--leading-4, 1rem);
+  /* Assuming --font-weight-medium (500) is available */
+  font-weight: var(--font-weight-medium, 500);
+  /* Replicating default transition. Users might define --transition-property-default, etc. */
+  transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-timing-function: var(--ease-in-out, cubic-bezier(0.4, 0, 0.2, 1));
+  transition-duration: var(--duration-150, 150ms);
+}
+
+/* Color Utilities */
+/*
+  Assumes user has defined CSS variables for colors and their shades/contrasts.
+  The text color is determined by the 1000-X logic from the original plugin.
+  Example for primary theme:
+  @theme {
+    --color-primary: oklch(0.62 0.18 260.08);
+    --color-primary-contrast: oklch(0.96 0.03 258.08);
+    --color-primary-50: oklch(0.96 0.03 258.08);
+    --color-primary-100: oklch(0.92 0.05 257.15);
+    /* ... all shades ... */
+    --color-primary-950: oklch(0.29 0.06 264.71);
+    /* Similar for --color-secondary, etc. */
+  }
+*/
+
+/* Primary Color */
+@utility .color-primary {
+  background-color: var(--color-primary);
+  color: var(--color-primary-contrast);
+}
+@utility .color-primary-50 {
+  background-color: var(--color-primary-50);
+  color: var(--color-primary-950);
+}
+@utility .color-primary-100 {
+  background-color: var(--color-primary-100);
+  color: var(--color-primary-900);
+}
+@utility .color-primary-200 {
+  background-color: var(--color-primary-200);
+  color: var(--color-primary-800);
+}
+@utility .color-primary-300 {
+  background-color: var(--color-primary-300);
+  color: var(--color-primary-700);
+}
+@utility .color-primary-400 {
+  background-color: var(--color-primary-400);
+  color: var(--color-primary-600);
+}
+@utility .color-primary-500 {
+  background-color: var(--color-primary-500);
+  color: var(--color-primary-500-contrast, var(--color-primary-500));
+}
+@utility .color-primary-600 {
+  background-color: var(--color-primary-600);
+  color: var(--color-primary-400);
+}
+@utility .color-primary-700 {
+  background-color: var(--color-primary-700);
+  color: var(--color-primary-300);
+}
+@utility .color-primary-800 {
+  background-color: var(--color-primary-800);
+  color: var(--color-primary-200);
+}
+@utility .color-primary-900 {
+  background-color: var(--color-primary-900);
+  color: var(--color-primary-100);
+}
+@utility .color-primary-950 {
+  background-color: var(--color-primary-950);
+  color: var(--color-primary-50);
+}
+@utility .color-primary-contrast {
+  background-color: var(--color-primary-contrast);
+  color: var(--color-primary);
+}
+
+/* Secondary Color */
+@utility .color-secondary {
+  background-color: var(--color-secondary);
+  color: var(--color-secondary-contrast);
+}
+@utility .color-secondary-50 {
+  background-color: var(--color-secondary-50);
+  color: var(--color-secondary-950);
+}
+@utility .color-secondary-100 {
+  background-color: var(--color-secondary-100);
+  color: var(--color-secondary-900);
+}
+@utility .color-secondary-200 {
+  background-color: var(--color-secondary-200);
+  color: var(--color-secondary-800);
+}
+@utility .color-secondary-300 {
+  background-color: var(--color-secondary-300);
+  color: var(--color-secondary-700);
+}
+@utility .color-secondary-400 {
+  background-color: var(--color-secondary-400);
+  color: var(--color-secondary-600);
+}
+@utility .color-secondary-500 {
+  background-color: var(--color-secondary-500);
+  color: var(--color-secondary-500-contrast, var(--color-secondary-500));
+}
+@utility .color-secondary-600 {
+  background-color: var(--color-secondary-600);
+  color: var(--color-secondary-400);
+}
+@utility .color-secondary-700 {
+  background-color: var(--color-secondary-700);
+  color: var(--color-secondary-300);
+}
+@utility .color-secondary-800 {
+  background-color: var(--color-secondary-800);
+  color: var(--color-secondary-200);
+}
+@utility .color-secondary-900 {
+  background-color: var(--color-secondary-900);
+  color: var(--color-secondary-100);
+}
+@utility .color-secondary-950 {
+  background-color: var(--color-secondary-950);
+  color: var(--color-secondary-50);
+}
+@utility .color-secondary-contrast {
+  background-color: var(--color-secondary-contrast);
+  color: var(--color-secondary);
+}
+
+/* Row Utilities (Responsive Padding Y) */
+/*
+  Assumes spacing variables (e.g., --spacing-0, --spacing-px, --spacing-0-5, --spacing-1)
+  and --breakpoint-sm are defined in the user's @theme.
+  Example:
+  @theme {
+    --spacing-0: 0px;
+    --spacing-px: 1px;
+    --spacing-0-5: 0.125rem; // For 0.5
+    --spacing-1: 0.25rem;
+    /* ... other spacing values */
+    --breakpoint-sm: 640px; // Or your desired sm breakpoint
+  }
+*/
+@utility .row-0 {
+  padding-top: var(--spacing-0);
+  padding-bottom: var(--spacing-0);
+  @media (min-width: var(--breakpoint-sm, 640px)) {
+    padding-top: var(--spacing-px);
+    padding-bottom: var(--spacing-px);
+  }
+}
+@utility .row-px {
+  padding-top: var(--spacing-px);
+  padding-bottom: var(--spacing-px);
+  @media (min-width: var(--breakpoint-sm, 640px)) {
+    padding-top: var(--spacing-0-5);
+    padding-bottom: var(--spacing-0-5);
+  }
+}
+@utility .row-0-5 {
+  padding-top: var(--spacing-0-5);
+  padding-bottom: var(--spacing-0-5);
+  @media (min-width: var(--breakpoint-sm, 640px)) {
+    padding-top: var(--spacing-0-5);
+    padding-bottom: var(--spacing-0-5);
+  }
+}
+@utility .row-1 {
+  padding-top: var(--spacing-1);
+  padding-bottom: var(--spacing-1);
+  @media (min-width: var(--breakpoint-sm, 640px)) {
+    padding-top: var(--spacing-2);
+    padding-bottom: var(--spacing-2);
+  }
+}
+@utility .row-1-5 {
+  padding-top: var(--spacing-1-5);
+  padding-bottom: var(--spacing-1-5);
+  @media (min-width: var(--breakpoint-sm, 640px)) {
+    padding-top: var(--spacing-3);
+    padding-bottom: var(--spacing-3);
+  }
+}
+@utility .row-2 {
+  padding-top: var(--spacing-2);
+  padding-bottom: var(--spacing-2);
+  @media (min-width: var(--breakpoint-sm, 640px)) {
+    padding-top: var(--spacing-4);
+    padding-bottom: var(--spacing-4);
+  }
+}
+@utility .row-2-5 {
+  padding-top: var(--spacing-2-5);
+  padding-bottom: var(--spacing-2-5);
+  @media (min-width: var(--breakpoint-sm, 640px)) {
+    padding-top: var(--spacing-5);
+    padding-bottom: var(--spacing-5);
+  }
+}
+@utility .row-3 {
+  padding-top: var(--spacing-3);
+  padding-bottom: var(--spacing-3);
+  @media (min-width: var(--breakpoint-sm, 640px)) {
+    padding-top: var(--spacing-6);
+    padding-bottom: var(--spacing-6);
+  }
+}
+@utility .row-3-5 {
+  padding-top: var(--spacing-3-5);
+  padding-bottom: var(--spacing-3-5);
+  @media (min-width: var(--breakpoint-sm, 640px)) {
+    padding-top: var(--spacing-7);
+    padding-bottom: var(--spacing-7);
+  }
+}
+@utility .row-4 {
+  padding-top: var(--spacing-4);
+  padding-bottom: var(--spacing-4);
+  @media (min-width: var(--breakpoint-sm, 640px)) {
+    padding-top: var(--spacing-8);
+    padding-bottom: var(--spacing-8);
+  }
+}
+
+/* Default Vinkas Container Styles */
+/*
+  This overrides Tailwind's default .container to add centering and responsive padding.
+  Users can define --container-padding-[breakpoint] and --breakpoint-[size]
+  in their @theme to customize.
+*/
+@utility .container {
+  width: 100%; /* Standard container property */
+  /* Tailwind's core .container will still handle responsive max-width based on --breakpoint-* variables */
+  margin-inline: auto; /* center: true */
+
+  /* Default padding */
+  padding-inline: var(--container-padding-default, 1rem);
+
+  /* Responsive padding */
+  @media (min-width: var(--breakpoint-sm, 640px)) { /* Fallback breakpoint values if not in user's theme */
+    padding-inline: var(--container-padding-sm, 2rem);
+  }
+  @media (min-width: var(--breakpoint-md, 768px)) {
+    padding-inline: var(--container-padding-md, 3rem);
+  }
+  @media (min-width: var(--breakpoint-lg, 1024px)) {
+    padding-inline: var(--container-padding-lg, 4rem);
+  }
+  @media (min-width: var(--breakpoint-xl, 1280px)) {
+    padding-inline: var(--container-padding-xl, 5rem);
+  }
+  @media (min-width: var(--breakpoint-2xl, 1536px)) {
+    padding-inline: var(--container-padding-2xl, 6rem);
+  }
+}
+/* End of Vinkas Plugin Utilities */
